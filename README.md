@@ -61,7 +61,7 @@ Supports 1-8 arguments for most of the common types.
 ## Installation
 
 ```sh
-forge install evmcheb/solarray
+forge install emo-eth/solarray
 ```
 
 ## Usage
@@ -72,5 +72,5 @@ import {Solarray} from "solarray/solarray.sol";
 
 ## Adding new types
 
-If you want to include a new type, you can use the [generator.py](https://github.com/evmcheb/solarray/blob/master/generator.py) script that
+If you want to include a new type, you can use the [generator.py](https://github.com/emo-eth/solarray/blob/master/generator.py) script that
 I used to make the helper library.
