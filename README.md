@@ -54,6 +54,11 @@ uint8 last = Solarray.pop(nums2);
 // use unsafe when you are sure the array is not empty, for slight gas savings
 last = Solarray.popUnsafe(nums2);
 
+// convert from a fixed length array to a dynamic array
+uint8[] memory numsFromFixed = Solarray.fromFixed([1, 2, 3]);
+// also allocate a max length for the new dynamic array
+numsFromFixed = Solarray.fromFixedWithMaxLength([1, 2, 3], 5);
+
 ```
 
 Supports 1-8 arguments for most of the common types.
