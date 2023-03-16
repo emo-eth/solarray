@@ -98,6 +98,93 @@ contract SolarrayTest is Test {
         assertEq(b.length, 4);
     }
 
+    function testCopy() public {
+        uint256[] memory a = Solarray.uints(1, 2, 3);
+        uint256[] memory b = Solarray.copy(a);
+        assertContainsAscending(b, 3);
+        assertEq(a.length, 3);
+        assertEq(b.length, 3);
+        bool equal;
+        assembly {
+            equal := eq(a, b)
+        }
+        assertEq(equal, false, "memory pointer should be different");
+    }
+
+    function testCopyAndResize() public {
+        uint256[] memory a = Solarray.uints(1, 2, 3);
+        uint256[] memory b = Solarray.copyAndResize(a, 5);
+        assertEq(a.length, 3);
+        assertEq(b.length, 5);
+        bool equal;
+        assembly {
+            equal := eq(a, b)
+        }
+        assertEq(equal, false, "memory pointer should be different");
+
+        b = Solarray.copyAndResize(a, 2);
+        assertEq(a.length, 3);
+        assertEq(b.length, 2);
+        assembly {
+            equal := eq(a, b)
+        }
+        assertEq(equal, false, "memory pointer should be different");
+        assertContainsAscending(b, 2);
+    }
+
+    function testCopyAndAllocate() public {
+        uint256[] memory a = Solarray.uints(1, 2, 3);
+        uint256[] memory b = Solarray.copyAndAllocate(a, 4);
+        uint256[] memory c = Solarray.uints(1, 2, 3);
+        assertEq(a.length, 3);
+        assertEq(b.length, 3);
+        bool equal;
+        assembly {
+            equal := eq(a, b)
+        }
+        assertEq(equal, false, "memory pointer should be different");
+
+        b = Solarray.appendUnsafe(b, 4);
+        assertEq(a.length, 3);
+        assertEq(b.length, 4);
+        assertContainsAscending(b, 4);
+        b = Solarray.appendUnsafe(b, 5);
+        assertEq(a.length, 3);
+        assertContainsAscending(b, 5);
+        assertEq(c.length, 5, "memory should have been dirtied");
+    }
+
+    function testTruncate() public {
+        uint256[] memory a = Solarray.uints(1, 2, 3, 4, 5);
+        uint256[] memory b = Solarray.truncate(a, 3);
+        assertEq(a.length, 3);
+        assertEq(b.length, 3);
+        assertContainsAscending(b, 3);
+        bool equal;
+        assembly {
+            equal := eq(a, b)
+        }
+        assertEq(equal, true, "memory pointer should be the same");
+    }
+
+    function testPop() public {
+        uint256[] memory a = Solarray.uints(1, 2);
+        uint256 value = Solarray.pop(a);
+        assertEq(a.length, 1, "length should be 1");
+        assertEq(value, 2, "value should be 2");
+        value = Solarray.popUnsafe(a);
+        assertEq(a.length, 0, "length should be 0");
+        assertEq(value, 1, "value should be 1");
+
+        vm.expectRevert( /*abi.encodeWithSignature("Panic(uint256)", 0x11)*/ );
+        this.extPop(a);
+    }
+
+    function extPop(uint256[] memory arr) external pure returns (uint256[] memory _arr, uint256 value) {
+        _arr = arr;
+        value = Solarray.pop(_arr);
+    }
+
     function assertEmpty(uint256[] memory uint256s, uint256 expectedLength) internal {
         assertEq(uint256s.length, expectedLength, "not correct length");
         for (uint256 i = 0; i < uint256s.length; i++) {
