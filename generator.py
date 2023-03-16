@@ -326,6 +326,26 @@ def append_pop(_type: str, functions: list[str]):
             mstore(arr, sub(length, 1))
         }}
     }}
+
+    function popLeft({type_name}[] memory arr) internal pure returns ({type_name}[] memory newArr, {_type} value) {{
+        assembly {{
+            let length := mload(arr)
+            returndatacopy(returndatasize(),returndatasize(),iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }}
+    }}
+
+    function popLeftUnsafe({type_name}[] memory arr) internal pure returns ({type_name}[] memory newArr, {_type} value) {{
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {{
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }}
+        }}
 """
     )
 

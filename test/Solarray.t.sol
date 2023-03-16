@@ -195,9 +195,28 @@ contract SolarrayTest is Test {
         assertEq(b.length, 6, "memory should have been dirtied");
     }
 
+    function testPopLeft() public {
+        uint256[] memory a = Solarray.uints(1, 2);
+        uint256 value;
+        (a, value) = Solarray.popLeft(a);
+        assertEq(a.length, 1, "length should be 1");
+        assertEq(value, 1, "value should be 1");
+        (a, value) = Solarray.popLeftUnsafe(a);
+        assertEq(a.length, 0, "length should be 0");
+        assertEq(value, 2, "value should be 2");
+        assertEq(a.length, 0, "length should be 0");
+
+        vm.expectRevert( /*abi.encodeWithSignature("Panic(uint256)", 0x11)*/ );
+        this.extPopLeft(a);
+    }
+
     function extPop(uint256[] memory arr) external pure returns (uint256[] memory _arr, uint256 value) {
         _arr = arr;
         value = Solarray.pop(_arr);
+    }
+
+    function extPopLeft(uint256[] memory arr) external pure returns (uint256[] memory _arr, uint256 value) {
+        (_arr, value) = Solarray.popLeft(arr);
     }
 
     function assertEmpty(uint256[] memory uint256s, uint256 expectedLength) internal {

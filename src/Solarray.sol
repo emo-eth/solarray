@@ -294,6 +294,26 @@ library Solarray {
         }
     }
 
+    function popLeft(uint8[] memory arr) internal pure returns (uint8[] memory newArr, uint8 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(uint8[] memory arr) internal pure returns (uint8[] memory newArr, uint8 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
     function fromFixed(uint8[1] memory arr) internal pure returns (uint8[] memory newArr) {
         newArr = new uint8[](1);
         for (uint256 i = 0; i < 1;) {
@@ -785,6 +805,26 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function popLeft(uint16[] memory arr) internal pure returns (uint16[] memory newArr, uint16 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(uint16[] memory arr) internal pure returns (uint16[] memory newArr, uint16 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
         }
     }
 
@@ -1282,6 +1322,26 @@ library Solarray {
         }
     }
 
+    function popLeft(uint32[] memory arr) internal pure returns (uint32[] memory newArr, uint32 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(uint32[] memory arr) internal pure returns (uint32[] memory newArr, uint32 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
     function fromFixed(uint32[1] memory arr) internal pure returns (uint32[] memory newArr) {
         newArr = new uint32[](1);
         for (uint256 i = 0; i < 1;) {
@@ -1773,6 +1833,26 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function popLeft(uint64[] memory arr) internal pure returns (uint64[] memory newArr, uint64 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(uint64[] memory arr) internal pure returns (uint64[] memory newArr, uint64 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
         }
     }
 
@@ -2270,6 +2350,26 @@ library Solarray {
         }
     }
 
+    function popLeft(uint128[] memory arr) internal pure returns (uint128[] memory newArr, uint128 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(uint128[] memory arr) internal pure returns (uint128[] memory newArr, uint128 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
     function fromFixed(uint128[1] memory arr) internal pure returns (uint128[] memory newArr) {
         newArr = new uint128[](1);
         for (uint256 i = 0; i < 1;) {
@@ -2764,6 +2864,26 @@ library Solarray {
         }
     }
 
+    function popLeft(uint256[] memory arr) internal pure returns (uint256[] memory newArr, uint256 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(uint256[] memory arr) internal pure returns (uint256[] memory newArr, uint256 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
     function fromFixed(uint256[1] memory arr) internal pure returns (uint256[] memory newArr) {
         newArr = new uint256[](1);
         for (uint256 i = 0; i < 1;) {
@@ -3238,6 +3358,26 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function popLeft(int8[] memory arr) internal pure returns (int8[] memory newArr, int8 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(int8[] memory arr) internal pure returns (int8[] memory newArr, int8 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
         }
     }
 
@@ -3722,6 +3862,26 @@ library Solarray {
         }
     }
 
+    function popLeft(int16[] memory arr) internal pure returns (int16[] memory newArr, int16 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(int16[] memory arr) internal pure returns (int16[] memory newArr, int16 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
     function fromFixed(int16[1] memory arr) internal pure returns (int16[] memory newArr) {
         newArr = new int16[](1);
         for (uint256 i = 0; i < 1;) {
@@ -4203,6 +4363,26 @@ library Solarray {
         }
     }
 
+    function popLeft(int32[] memory arr) internal pure returns (int32[] memory newArr, int32 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(int32[] memory arr) internal pure returns (int32[] memory newArr, int32 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
     function fromFixed(int32[1] memory arr) internal pure returns (int32[] memory newArr) {
         newArr = new int32[](1);
         for (uint256 i = 0; i < 1;) {
@@ -4681,6 +4861,26 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function popLeft(int64[] memory arr) internal pure returns (int64[] memory newArr, int64 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(int64[] memory arr) internal pure returns (int64[] memory newArr, int64 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
         }
     }
 
@@ -5178,6 +5378,26 @@ library Solarray {
         }
     }
 
+    function popLeft(int128[] memory arr) internal pure returns (int128[] memory newArr, int128 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(int128[] memory arr) internal pure returns (int128[] memory newArr, int128 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
     function fromFixed(int128[1] memory arr) internal pure returns (int128[] memory newArr) {
         newArr = new int128[](1);
         for (uint256 i = 0; i < 1;) {
@@ -5669,6 +5889,26 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function popLeft(int256[] memory arr) internal pure returns (int256[] memory newArr, int256 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(int256[] memory arr) internal pure returns (int256[] memory newArr, int256 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
         }
     }
 
@@ -6166,6 +6406,26 @@ library Solarray {
         }
     }
 
+    function popLeft(bytes1[] memory arr) internal pure returns (bytes1[] memory newArr, bytes1 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(bytes1[] memory arr) internal pure returns (bytes1[] memory newArr, bytes1 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
     function fromFixed(bytes1[1] memory arr) internal pure returns (bytes1[] memory newArr) {
         newArr = new bytes1[](1);
         for (uint256 i = 0; i < 1;) {
@@ -6657,6 +6917,26 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function popLeft(bytes4[] memory arr) internal pure returns (bytes4[] memory newArr, bytes4 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(bytes4[] memory arr) internal pure returns (bytes4[] memory newArr, bytes4 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
         }
     }
 
@@ -7154,6 +7434,26 @@ library Solarray {
         }
     }
 
+    function popLeft(bytes8[] memory arr) internal pure returns (bytes8[] memory newArr, bytes8 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(bytes8[] memory arr) internal pure returns (bytes8[] memory newArr, bytes8 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
     function fromFixed(bytes8[1] memory arr) internal pure returns (bytes8[] memory newArr) {
         newArr = new bytes8[](1);
         for (uint256 i = 0; i < 1;) {
@@ -7648,6 +7948,26 @@ library Solarray {
         }
     }
 
+    function popLeft(bytes20[] memory arr) internal pure returns (bytes20[] memory newArr, bytes20 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(bytes20[] memory arr) internal pure returns (bytes20[] memory newArr, bytes20 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
     function fromFixed(bytes20[1] memory arr) internal pure returns (bytes20[] memory newArr) {
         newArr = new bytes20[](1);
         for (uint256 i = 0; i < 1;) {
@@ -8139,6 +8459,26 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function popLeft(bytes32[] memory arr) internal pure returns (bytes32[] memory newArr, bytes32 value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(bytes32[] memory arr) internal pure returns (bytes32[] memory newArr, bytes32 value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
         }
     }
 
@@ -8640,6 +8980,26 @@ library Solarray {
         }
     }
 
+    function popLeft(address[] memory arr) internal pure returns (address[] memory newArr, address value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(address[] memory arr) internal pure returns (address[] memory newArr, address value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
     function fromFixed(address[1] memory arr) internal pure returns (address[] memory newArr) {
         newArr = new address[](1);
         for (uint256 i = 0; i < 1;) {
@@ -9114,6 +9474,26 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function popLeft(bool[] memory arr) internal pure returns (bool[] memory newArr, bool value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(bool[] memory arr) internal pure returns (bool[] memory newArr, bool value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
         }
     }
 
@@ -9631,6 +10011,26 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function popLeft(bytes[] memory arr) internal pure returns (bytes[] memory newArr, bytes memory value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(bytes[] memory arr) internal pure returns (bytes[] memory newArr, bytes memory value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
         }
     }
 
@@ -10155,6 +10555,26 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function popLeft(string[] memory arr) internal pure returns (string[] memory newArr, string memory value) {
+        assembly {
+            let length := mload(arr)
+            returndatacopy(returndatasize(), returndatasize(), iszero(length))
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
+        }
+    }
+
+    function popLeftUnsafe(string[] memory arr) internal pure returns (string[] memory newArr, string memory value) {
+        // This function is unsafe because it does not check if the array is empty.
+        assembly {
+            let length := mload(arr)
+            value := mload(add(arr, 0x20))
+            newArr := add(arr, 0x20)
+            mstore(newArr, sub(length, 1))
         }
     }
 

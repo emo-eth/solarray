@@ -27,8 +27,8 @@ uint8[] memory nums3 = Solarray.append(nums, 4);
 // note that this will not revert if you attempt to append more than the maximum length
 uint8[] memory nums = Solarray.allocateUints({maxLength: 3});
 Solarray.appendUnsafe(nums, 1);
-Sollarray.appendUnsafe(nums, 2);
-Sollarray.appendUnsafe(nums, 3);
+Solarray.appendUnsafe(nums, 2);
+Solarray.appendUnsafe(nums, 3);
 
 // concisely initialize an array that you can then append to later
 nums = Solarray.uint8sWithMaxLength({maxLength:5, a:1, b:2, c:3});
@@ -54,11 +54,17 @@ uint8 last = Solarray.pop(nums2);
 // use unsafe when you are sure the array is not empty, for slight gas savings
 last = Solarray.popUnsafe(nums2);
 
+// pop the first element from an array. Will revert with OutOfOffset if the array is empty.
+// Returns the pointer to the modified array, and the popped element.
+uint8 first;
+(nums2, first) = Solarray.popLeft(nums2);
+// use unsafe when you are sure the array is not empty, for slight gas savings
+(nums2, first) = Solarray.popLeftUnsafe(nums2);
+
 // convert from a fixed length array to a dynamic array
 uint8[] memory numsFromFixed = Solarray.fromFixed([1, 2, 3]);
 // also allocate a max length for the new dynamic array
 numsFromFixed = Solarray.fromFixedWithMaxLength([1, 2, 3], 5);
-
 ```
 
 Supports 1-8 arguments for most of the common types.
