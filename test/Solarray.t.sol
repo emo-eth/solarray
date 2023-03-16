@@ -180,6 +180,21 @@ contract SolarrayTest is Test {
         this.extPop(a);
     }
 
+    function testFromFixed() public {
+        uint256[3] memory f = [uint256(1), uint256(2), uint256(3)];
+        uint256[] memory a = Solarray.fromFixed(f);
+        assertContainsAscending(a, 3);
+        a = Solarray.fromFixedWithMaxLength(f, 5);
+        uint256[] memory b = Solarray.fromFixed(f);
+        assertContainsAscending(a, 3);
+        assertContainsAscending(b, 3);
+        Solarray.appendUnsafe(a, 4);
+        Solarray.appendUnsafe(a, 5);
+        Solarray.appendUnsafe(a, 6);
+        assertContainsAscending(a, 6);
+        assertEq(b.length, 6, "memory should have been dirtied");
+    }
+
     function extPop(uint256[] memory arr) external pure returns (uint256[] memory _arr, uint256 value) {
         _arr = arr;
         value = Solarray.pop(_arr);

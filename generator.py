@@ -330,6 +330,39 @@ def append_pop(_type: str, functions: list[str]):
     )
 
 
+def append_from_fixed(_type: str, functions: list[str]):
+    length = 8
+    type_name = _type.split()[0]
+    for i in range(1, length):
+        functions.append(
+            f"""
+        function fromFixed({type_name}[{i}] memory arr) internal pure returns ({type_name}[] memory newArr) {{
+            newArr = new {type_name}[]({i});
+            for (uint256 i = 0; i < {i};) {{
+                newArr[i] = arr[i];
+                unchecked {{
+                    ++i;
+                }}
+            }}
+        }}
+
+        function fromFixedWithMaxLength({type_name}[{i}] memory arr, uint256 maxLength) internal pure returns ({type_name}[] memory newArr) {{
+            newArr = new {type_name}[](maxLength);
+            for (uint256 i = 0; i < {i};) {{
+                newArr[i] = arr[i];
+                unchecked {{
+                    
+                    ++i;
+                }}
+            }}
+            assembly {{
+                mstore(newArr, {i})
+            }}
+        }}
+    """
+        )
+
+
 def generate_array_functions():
     length = 8
     functions = []
@@ -342,6 +375,7 @@ def generate_array_functions():
         append_append(_type, functions)
         append_copy(_type, functions)
         append_pop(_type, functions)
+        append_from_fixed(_type, functions)
     for _type in shorthand:
         append_array_constructors(_type, functions, length)
         append_allocated_array_constructors(_type, functions, length)

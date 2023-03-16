@@ -294,6 +294,195 @@ library Solarray {
         }
     }
 
+    function fromFixed(uint8[1] memory arr) internal pure returns (uint8[] memory newArr) {
+        newArr = new uint8[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint8[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint8[] memory newArr)
+    {
+        newArr = new uint8[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(uint8[2] memory arr) internal pure returns (uint8[] memory newArr) {
+        newArr = new uint8[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint8[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint8[] memory newArr)
+    {
+        newArr = new uint8[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(uint8[3] memory arr) internal pure returns (uint8[] memory newArr) {
+        newArr = new uint8[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint8[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint8[] memory newArr)
+    {
+        newArr = new uint8[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(uint8[4] memory arr) internal pure returns (uint8[] memory newArr) {
+        newArr = new uint8[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint8[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint8[] memory newArr)
+    {
+        newArr = new uint8[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(uint8[5] memory arr) internal pure returns (uint8[] memory newArr) {
+        newArr = new uint8[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint8[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint8[] memory newArr)
+    {
+        newArr = new uint8[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(uint8[6] memory arr) internal pure returns (uint8[] memory newArr) {
+        newArr = new uint8[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint8[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint8[] memory newArr)
+    {
+        newArr = new uint8[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(uint8[7] memory arr) internal pure returns (uint8[] memory newArr) {
+        newArr = new uint8[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint8[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint8[] memory newArr)
+    {
+        newArr = new uint8[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
+        }
+    }
+
     function uint16s(uint16 a) internal pure returns (uint16[] memory) {
         uint16[] memory arr = new uint16[](1);
         arr[0] = a;
@@ -596,6 +785,195 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function fromFixed(uint16[1] memory arr) internal pure returns (uint16[] memory newArr) {
+        newArr = new uint16[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint16[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint16[] memory newArr)
+    {
+        newArr = new uint16[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(uint16[2] memory arr) internal pure returns (uint16[] memory newArr) {
+        newArr = new uint16[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint16[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint16[] memory newArr)
+    {
+        newArr = new uint16[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(uint16[3] memory arr) internal pure returns (uint16[] memory newArr) {
+        newArr = new uint16[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint16[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint16[] memory newArr)
+    {
+        newArr = new uint16[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(uint16[4] memory arr) internal pure returns (uint16[] memory newArr) {
+        newArr = new uint16[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint16[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint16[] memory newArr)
+    {
+        newArr = new uint16[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(uint16[5] memory arr) internal pure returns (uint16[] memory newArr) {
+        newArr = new uint16[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint16[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint16[] memory newArr)
+    {
+        newArr = new uint16[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(uint16[6] memory arr) internal pure returns (uint16[] memory newArr) {
+        newArr = new uint16[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint16[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint16[] memory newArr)
+    {
+        newArr = new uint16[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(uint16[7] memory arr) internal pure returns (uint16[] memory newArr) {
+        newArr = new uint16[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint16[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint16[] memory newArr)
+    {
+        newArr = new uint16[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
         }
     }
 
@@ -904,6 +1282,195 @@ library Solarray {
         }
     }
 
+    function fromFixed(uint32[1] memory arr) internal pure returns (uint32[] memory newArr) {
+        newArr = new uint32[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint32[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint32[] memory newArr)
+    {
+        newArr = new uint32[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(uint32[2] memory arr) internal pure returns (uint32[] memory newArr) {
+        newArr = new uint32[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint32[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint32[] memory newArr)
+    {
+        newArr = new uint32[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(uint32[3] memory arr) internal pure returns (uint32[] memory newArr) {
+        newArr = new uint32[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint32[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint32[] memory newArr)
+    {
+        newArr = new uint32[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(uint32[4] memory arr) internal pure returns (uint32[] memory newArr) {
+        newArr = new uint32[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint32[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint32[] memory newArr)
+    {
+        newArr = new uint32[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(uint32[5] memory arr) internal pure returns (uint32[] memory newArr) {
+        newArr = new uint32[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint32[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint32[] memory newArr)
+    {
+        newArr = new uint32[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(uint32[6] memory arr) internal pure returns (uint32[] memory newArr) {
+        newArr = new uint32[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint32[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint32[] memory newArr)
+    {
+        newArr = new uint32[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(uint32[7] memory arr) internal pure returns (uint32[] memory newArr) {
+        newArr = new uint32[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint32[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint32[] memory newArr)
+    {
+        newArr = new uint32[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
+        }
+    }
+
     function uint64s(uint64 a) internal pure returns (uint64[] memory) {
         uint64[] memory arr = new uint64[](1);
         arr[0] = a;
@@ -1206,6 +1773,195 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function fromFixed(uint64[1] memory arr) internal pure returns (uint64[] memory newArr) {
+        newArr = new uint64[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint64[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint64[] memory newArr)
+    {
+        newArr = new uint64[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(uint64[2] memory arr) internal pure returns (uint64[] memory newArr) {
+        newArr = new uint64[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint64[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint64[] memory newArr)
+    {
+        newArr = new uint64[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(uint64[3] memory arr) internal pure returns (uint64[] memory newArr) {
+        newArr = new uint64[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint64[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint64[] memory newArr)
+    {
+        newArr = new uint64[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(uint64[4] memory arr) internal pure returns (uint64[] memory newArr) {
+        newArr = new uint64[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint64[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint64[] memory newArr)
+    {
+        newArr = new uint64[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(uint64[5] memory arr) internal pure returns (uint64[] memory newArr) {
+        newArr = new uint64[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint64[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint64[] memory newArr)
+    {
+        newArr = new uint64[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(uint64[6] memory arr) internal pure returns (uint64[] memory newArr) {
+        newArr = new uint64[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint64[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint64[] memory newArr)
+    {
+        newArr = new uint64[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(uint64[7] memory arr) internal pure returns (uint64[] memory newArr) {
+        newArr = new uint64[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint64[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint64[] memory newArr)
+    {
+        newArr = new uint64[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
         }
     }
 
@@ -1514,6 +2270,195 @@ library Solarray {
         }
     }
 
+    function fromFixed(uint128[1] memory arr) internal pure returns (uint128[] memory newArr) {
+        newArr = new uint128[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint128[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint128[] memory newArr)
+    {
+        newArr = new uint128[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(uint128[2] memory arr) internal pure returns (uint128[] memory newArr) {
+        newArr = new uint128[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint128[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint128[] memory newArr)
+    {
+        newArr = new uint128[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(uint128[3] memory arr) internal pure returns (uint128[] memory newArr) {
+        newArr = new uint128[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint128[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint128[] memory newArr)
+    {
+        newArr = new uint128[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(uint128[4] memory arr) internal pure returns (uint128[] memory newArr) {
+        newArr = new uint128[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint128[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint128[] memory newArr)
+    {
+        newArr = new uint128[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(uint128[5] memory arr) internal pure returns (uint128[] memory newArr) {
+        newArr = new uint128[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint128[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint128[] memory newArr)
+    {
+        newArr = new uint128[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(uint128[6] memory arr) internal pure returns (uint128[] memory newArr) {
+        newArr = new uint128[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint128[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint128[] memory newArr)
+    {
+        newArr = new uint128[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(uint128[7] memory arr) internal pure returns (uint128[] memory newArr) {
+        newArr = new uint128[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint128[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint128[] memory newArr)
+    {
+        newArr = new uint128[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
+        }
+    }
+
     function uint256s(uint256 a) internal pure returns (uint256[] memory) {
         uint256[] memory arr = new uint256[](1);
         arr[0] = a;
@@ -1819,6 +2764,195 @@ library Solarray {
         }
     }
 
+    function fromFixed(uint256[1] memory arr) internal pure returns (uint256[] memory newArr) {
+        newArr = new uint256[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint256[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint256[] memory newArr)
+    {
+        newArr = new uint256[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(uint256[2] memory arr) internal pure returns (uint256[] memory newArr) {
+        newArr = new uint256[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint256[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint256[] memory newArr)
+    {
+        newArr = new uint256[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(uint256[3] memory arr) internal pure returns (uint256[] memory newArr) {
+        newArr = new uint256[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint256[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint256[] memory newArr)
+    {
+        newArr = new uint256[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(uint256[4] memory arr) internal pure returns (uint256[] memory newArr) {
+        newArr = new uint256[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint256[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint256[] memory newArr)
+    {
+        newArr = new uint256[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(uint256[5] memory arr) internal pure returns (uint256[] memory newArr) {
+        newArr = new uint256[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint256[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint256[] memory newArr)
+    {
+        newArr = new uint256[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(uint256[6] memory arr) internal pure returns (uint256[] memory newArr) {
+        newArr = new uint256[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint256[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint256[] memory newArr)
+    {
+        newArr = new uint256[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(uint256[7] memory arr) internal pure returns (uint256[] memory newArr) {
+        newArr = new uint256[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(uint256[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (uint256[] memory newArr)
+    {
+        newArr = new uint256[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
+        }
+    }
+
     function int8s(int8 a) internal pure returns (int8[] memory) {
         int8[] memory arr = new int8[](1);
         arr[0] = a;
@@ -2104,6 +3238,195 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function fromFixed(int8[1] memory arr) internal pure returns (int8[] memory newArr) {
+        newArr = new int8[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int8[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int8[] memory newArr)
+    {
+        newArr = new int8[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(int8[2] memory arr) internal pure returns (int8[] memory newArr) {
+        newArr = new int8[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int8[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int8[] memory newArr)
+    {
+        newArr = new int8[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(int8[3] memory arr) internal pure returns (int8[] memory newArr) {
+        newArr = new int8[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int8[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int8[] memory newArr)
+    {
+        newArr = new int8[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(int8[4] memory arr) internal pure returns (int8[] memory newArr) {
+        newArr = new int8[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int8[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int8[] memory newArr)
+    {
+        newArr = new int8[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(int8[5] memory arr) internal pure returns (int8[] memory newArr) {
+        newArr = new int8[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int8[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int8[] memory newArr)
+    {
+        newArr = new int8[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(int8[6] memory arr) internal pure returns (int8[] memory newArr) {
+        newArr = new int8[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int8[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int8[] memory newArr)
+    {
+        newArr = new int8[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(int8[7] memory arr) internal pure returns (int8[] memory newArr) {
+        newArr = new int8[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int8[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int8[] memory newArr)
+    {
+        newArr = new int8[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
         }
     }
 
@@ -2399,6 +3722,195 @@ library Solarray {
         }
     }
 
+    function fromFixed(int16[1] memory arr) internal pure returns (int16[] memory newArr) {
+        newArr = new int16[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int16[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int16[] memory newArr)
+    {
+        newArr = new int16[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(int16[2] memory arr) internal pure returns (int16[] memory newArr) {
+        newArr = new int16[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int16[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int16[] memory newArr)
+    {
+        newArr = new int16[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(int16[3] memory arr) internal pure returns (int16[] memory newArr) {
+        newArr = new int16[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int16[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int16[] memory newArr)
+    {
+        newArr = new int16[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(int16[4] memory arr) internal pure returns (int16[] memory newArr) {
+        newArr = new int16[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int16[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int16[] memory newArr)
+    {
+        newArr = new int16[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(int16[5] memory arr) internal pure returns (int16[] memory newArr) {
+        newArr = new int16[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int16[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int16[] memory newArr)
+    {
+        newArr = new int16[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(int16[6] memory arr) internal pure returns (int16[] memory newArr) {
+        newArr = new int16[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int16[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int16[] memory newArr)
+    {
+        newArr = new int16[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(int16[7] memory arr) internal pure returns (int16[] memory newArr) {
+        newArr = new int16[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int16[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int16[] memory newArr)
+    {
+        newArr = new int16[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
+        }
+    }
+
     function int32s(int32 a) internal pure returns (int32[] memory) {
         int32[] memory arr = new int32[](1);
         arr[0] = a;
@@ -2691,6 +4203,195 @@ library Solarray {
         }
     }
 
+    function fromFixed(int32[1] memory arr) internal pure returns (int32[] memory newArr) {
+        newArr = new int32[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int32[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int32[] memory newArr)
+    {
+        newArr = new int32[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(int32[2] memory arr) internal pure returns (int32[] memory newArr) {
+        newArr = new int32[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int32[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int32[] memory newArr)
+    {
+        newArr = new int32[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(int32[3] memory arr) internal pure returns (int32[] memory newArr) {
+        newArr = new int32[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int32[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int32[] memory newArr)
+    {
+        newArr = new int32[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(int32[4] memory arr) internal pure returns (int32[] memory newArr) {
+        newArr = new int32[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int32[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int32[] memory newArr)
+    {
+        newArr = new int32[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(int32[5] memory arr) internal pure returns (int32[] memory newArr) {
+        newArr = new int32[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int32[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int32[] memory newArr)
+    {
+        newArr = new int32[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(int32[6] memory arr) internal pure returns (int32[] memory newArr) {
+        newArr = new int32[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int32[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int32[] memory newArr)
+    {
+        newArr = new int32[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(int32[7] memory arr) internal pure returns (int32[] memory newArr) {
+        newArr = new int32[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int32[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int32[] memory newArr)
+    {
+        newArr = new int32[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
+        }
+    }
+
     function int64s(int64 a) internal pure returns (int64[] memory) {
         int64[] memory arr = new int64[](1);
         arr[0] = a;
@@ -2980,6 +4681,195 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function fromFixed(int64[1] memory arr) internal pure returns (int64[] memory newArr) {
+        newArr = new int64[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int64[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int64[] memory newArr)
+    {
+        newArr = new int64[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(int64[2] memory arr) internal pure returns (int64[] memory newArr) {
+        newArr = new int64[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int64[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int64[] memory newArr)
+    {
+        newArr = new int64[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(int64[3] memory arr) internal pure returns (int64[] memory newArr) {
+        newArr = new int64[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int64[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int64[] memory newArr)
+    {
+        newArr = new int64[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(int64[4] memory arr) internal pure returns (int64[] memory newArr) {
+        newArr = new int64[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int64[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int64[] memory newArr)
+    {
+        newArr = new int64[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(int64[5] memory arr) internal pure returns (int64[] memory newArr) {
+        newArr = new int64[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int64[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int64[] memory newArr)
+    {
+        newArr = new int64[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(int64[6] memory arr) internal pure returns (int64[] memory newArr) {
+        newArr = new int64[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int64[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int64[] memory newArr)
+    {
+        newArr = new int64[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(int64[7] memory arr) internal pure returns (int64[] memory newArr) {
+        newArr = new int64[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int64[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int64[] memory newArr)
+    {
+        newArr = new int64[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
         }
     }
 
@@ -3288,6 +5178,195 @@ library Solarray {
         }
     }
 
+    function fromFixed(int128[1] memory arr) internal pure returns (int128[] memory newArr) {
+        newArr = new int128[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int128[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int128[] memory newArr)
+    {
+        newArr = new int128[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(int128[2] memory arr) internal pure returns (int128[] memory newArr) {
+        newArr = new int128[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int128[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int128[] memory newArr)
+    {
+        newArr = new int128[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(int128[3] memory arr) internal pure returns (int128[] memory newArr) {
+        newArr = new int128[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int128[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int128[] memory newArr)
+    {
+        newArr = new int128[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(int128[4] memory arr) internal pure returns (int128[] memory newArr) {
+        newArr = new int128[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int128[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int128[] memory newArr)
+    {
+        newArr = new int128[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(int128[5] memory arr) internal pure returns (int128[] memory newArr) {
+        newArr = new int128[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int128[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int128[] memory newArr)
+    {
+        newArr = new int128[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(int128[6] memory arr) internal pure returns (int128[] memory newArr) {
+        newArr = new int128[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int128[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int128[] memory newArr)
+    {
+        newArr = new int128[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(int128[7] memory arr) internal pure returns (int128[] memory newArr) {
+        newArr = new int128[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int128[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int128[] memory newArr)
+    {
+        newArr = new int128[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
+        }
+    }
+
     function int256s(int256 a) internal pure returns (int256[] memory) {
         int256[] memory arr = new int256[](1);
         arr[0] = a;
@@ -3590,6 +5669,195 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function fromFixed(int256[1] memory arr) internal pure returns (int256[] memory newArr) {
+        newArr = new int256[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int256[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int256[] memory newArr)
+    {
+        newArr = new int256[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(int256[2] memory arr) internal pure returns (int256[] memory newArr) {
+        newArr = new int256[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int256[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int256[] memory newArr)
+    {
+        newArr = new int256[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(int256[3] memory arr) internal pure returns (int256[] memory newArr) {
+        newArr = new int256[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int256[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int256[] memory newArr)
+    {
+        newArr = new int256[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(int256[4] memory arr) internal pure returns (int256[] memory newArr) {
+        newArr = new int256[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int256[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int256[] memory newArr)
+    {
+        newArr = new int256[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(int256[5] memory arr) internal pure returns (int256[] memory newArr) {
+        newArr = new int256[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int256[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int256[] memory newArr)
+    {
+        newArr = new int256[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(int256[6] memory arr) internal pure returns (int256[] memory newArr) {
+        newArr = new int256[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int256[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int256[] memory newArr)
+    {
+        newArr = new int256[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(int256[7] memory arr) internal pure returns (int256[] memory newArr) {
+        newArr = new int256[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(int256[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (int256[] memory newArr)
+    {
+        newArr = new int256[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
         }
     }
 
@@ -3898,6 +6166,195 @@ library Solarray {
         }
     }
 
+    function fromFixed(bytes1[1] memory arr) internal pure returns (bytes1[] memory newArr) {
+        newArr = new bytes1[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes1[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes1[] memory newArr)
+    {
+        newArr = new bytes1[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(bytes1[2] memory arr) internal pure returns (bytes1[] memory newArr) {
+        newArr = new bytes1[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes1[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes1[] memory newArr)
+    {
+        newArr = new bytes1[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(bytes1[3] memory arr) internal pure returns (bytes1[] memory newArr) {
+        newArr = new bytes1[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes1[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes1[] memory newArr)
+    {
+        newArr = new bytes1[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(bytes1[4] memory arr) internal pure returns (bytes1[] memory newArr) {
+        newArr = new bytes1[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes1[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes1[] memory newArr)
+    {
+        newArr = new bytes1[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(bytes1[5] memory arr) internal pure returns (bytes1[] memory newArr) {
+        newArr = new bytes1[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes1[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes1[] memory newArr)
+    {
+        newArr = new bytes1[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(bytes1[6] memory arr) internal pure returns (bytes1[] memory newArr) {
+        newArr = new bytes1[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes1[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes1[] memory newArr)
+    {
+        newArr = new bytes1[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(bytes1[7] memory arr) internal pure returns (bytes1[] memory newArr) {
+        newArr = new bytes1[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes1[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes1[] memory newArr)
+    {
+        newArr = new bytes1[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
+        }
+    }
+
     function bytes4s(bytes4 a) internal pure returns (bytes4[] memory) {
         bytes4[] memory arr = new bytes4[](1);
         arr[0] = a;
@@ -4200,6 +6657,195 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function fromFixed(bytes4[1] memory arr) internal pure returns (bytes4[] memory newArr) {
+        newArr = new bytes4[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes4[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes4[] memory newArr)
+    {
+        newArr = new bytes4[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(bytes4[2] memory arr) internal pure returns (bytes4[] memory newArr) {
+        newArr = new bytes4[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes4[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes4[] memory newArr)
+    {
+        newArr = new bytes4[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(bytes4[3] memory arr) internal pure returns (bytes4[] memory newArr) {
+        newArr = new bytes4[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes4[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes4[] memory newArr)
+    {
+        newArr = new bytes4[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(bytes4[4] memory arr) internal pure returns (bytes4[] memory newArr) {
+        newArr = new bytes4[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes4[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes4[] memory newArr)
+    {
+        newArr = new bytes4[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(bytes4[5] memory arr) internal pure returns (bytes4[] memory newArr) {
+        newArr = new bytes4[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes4[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes4[] memory newArr)
+    {
+        newArr = new bytes4[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(bytes4[6] memory arr) internal pure returns (bytes4[] memory newArr) {
+        newArr = new bytes4[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes4[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes4[] memory newArr)
+    {
+        newArr = new bytes4[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(bytes4[7] memory arr) internal pure returns (bytes4[] memory newArr) {
+        newArr = new bytes4[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes4[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes4[] memory newArr)
+    {
+        newArr = new bytes4[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
         }
     }
 
@@ -4508,6 +7154,195 @@ library Solarray {
         }
     }
 
+    function fromFixed(bytes8[1] memory arr) internal pure returns (bytes8[] memory newArr) {
+        newArr = new bytes8[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes8[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes8[] memory newArr)
+    {
+        newArr = new bytes8[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(bytes8[2] memory arr) internal pure returns (bytes8[] memory newArr) {
+        newArr = new bytes8[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes8[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes8[] memory newArr)
+    {
+        newArr = new bytes8[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(bytes8[3] memory arr) internal pure returns (bytes8[] memory newArr) {
+        newArr = new bytes8[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes8[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes8[] memory newArr)
+    {
+        newArr = new bytes8[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(bytes8[4] memory arr) internal pure returns (bytes8[] memory newArr) {
+        newArr = new bytes8[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes8[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes8[] memory newArr)
+    {
+        newArr = new bytes8[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(bytes8[5] memory arr) internal pure returns (bytes8[] memory newArr) {
+        newArr = new bytes8[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes8[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes8[] memory newArr)
+    {
+        newArr = new bytes8[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(bytes8[6] memory arr) internal pure returns (bytes8[] memory newArr) {
+        newArr = new bytes8[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes8[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes8[] memory newArr)
+    {
+        newArr = new bytes8[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(bytes8[7] memory arr) internal pure returns (bytes8[] memory newArr) {
+        newArr = new bytes8[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes8[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes8[] memory newArr)
+    {
+        newArr = new bytes8[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
+        }
+    }
+
     function bytes20s(bytes20 a) internal pure returns (bytes20[] memory) {
         bytes20[] memory arr = new bytes20[](1);
         arr[0] = a;
@@ -4813,6 +7648,195 @@ library Solarray {
         }
     }
 
+    function fromFixed(bytes20[1] memory arr) internal pure returns (bytes20[] memory newArr) {
+        newArr = new bytes20[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes20[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes20[] memory newArr)
+    {
+        newArr = new bytes20[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(bytes20[2] memory arr) internal pure returns (bytes20[] memory newArr) {
+        newArr = new bytes20[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes20[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes20[] memory newArr)
+    {
+        newArr = new bytes20[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(bytes20[3] memory arr) internal pure returns (bytes20[] memory newArr) {
+        newArr = new bytes20[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes20[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes20[] memory newArr)
+    {
+        newArr = new bytes20[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(bytes20[4] memory arr) internal pure returns (bytes20[] memory newArr) {
+        newArr = new bytes20[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes20[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes20[] memory newArr)
+    {
+        newArr = new bytes20[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(bytes20[5] memory arr) internal pure returns (bytes20[] memory newArr) {
+        newArr = new bytes20[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes20[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes20[] memory newArr)
+    {
+        newArr = new bytes20[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(bytes20[6] memory arr) internal pure returns (bytes20[] memory newArr) {
+        newArr = new bytes20[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes20[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes20[] memory newArr)
+    {
+        newArr = new bytes20[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(bytes20[7] memory arr) internal pure returns (bytes20[] memory newArr) {
+        newArr = new bytes20[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes20[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes20[] memory newArr)
+    {
+        newArr = new bytes20[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
+        }
+    }
+
     function bytes32s(bytes32 a) internal pure returns (bytes32[] memory) {
         bytes32[] memory arr = new bytes32[](1);
         arr[0] = a;
@@ -5115,6 +8139,195 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function fromFixed(bytes32[1] memory arr) internal pure returns (bytes32[] memory newArr) {
+        newArr = new bytes32[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes32[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes32[] memory newArr)
+    {
+        newArr = new bytes32[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(bytes32[2] memory arr) internal pure returns (bytes32[] memory newArr) {
+        newArr = new bytes32[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes32[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes32[] memory newArr)
+    {
+        newArr = new bytes32[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(bytes32[3] memory arr) internal pure returns (bytes32[] memory newArr) {
+        newArr = new bytes32[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes32[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes32[] memory newArr)
+    {
+        newArr = new bytes32[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(bytes32[4] memory arr) internal pure returns (bytes32[] memory newArr) {
+        newArr = new bytes32[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes32[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes32[] memory newArr)
+    {
+        newArr = new bytes32[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(bytes32[5] memory arr) internal pure returns (bytes32[] memory newArr) {
+        newArr = new bytes32[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes32[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes32[] memory newArr)
+    {
+        newArr = new bytes32[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(bytes32[6] memory arr) internal pure returns (bytes32[] memory newArr) {
+        newArr = new bytes32[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes32[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes32[] memory newArr)
+    {
+        newArr = new bytes32[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(bytes32[7] memory arr) internal pure returns (bytes32[] memory newArr) {
+        newArr = new bytes32[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes32[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes32[] memory newArr)
+    {
+        newArr = new bytes32[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
         }
     }
 
@@ -5427,6 +8640,195 @@ library Solarray {
         }
     }
 
+    function fromFixed(address[1] memory arr) internal pure returns (address[] memory newArr) {
+        newArr = new address[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(address[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (address[] memory newArr)
+    {
+        newArr = new address[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(address[2] memory arr) internal pure returns (address[] memory newArr) {
+        newArr = new address[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(address[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (address[] memory newArr)
+    {
+        newArr = new address[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(address[3] memory arr) internal pure returns (address[] memory newArr) {
+        newArr = new address[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(address[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (address[] memory newArr)
+    {
+        newArr = new address[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(address[4] memory arr) internal pure returns (address[] memory newArr) {
+        newArr = new address[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(address[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (address[] memory newArr)
+    {
+        newArr = new address[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(address[5] memory arr) internal pure returns (address[] memory newArr) {
+        newArr = new address[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(address[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (address[] memory newArr)
+    {
+        newArr = new address[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(address[6] memory arr) internal pure returns (address[] memory newArr) {
+        newArr = new address[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(address[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (address[] memory newArr)
+    {
+        newArr = new address[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(address[7] memory arr) internal pure returns (address[] memory newArr) {
+        newArr = new address[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(address[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (address[] memory newArr)
+    {
+        newArr = new address[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
+        }
+    }
+
     function bools(bool a) internal pure returns (bool[] memory) {
         bool[] memory arr = new bool[](1);
         arr[0] = a;
@@ -5712,6 +9114,195 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function fromFixed(bool[1] memory arr) internal pure returns (bool[] memory newArr) {
+        newArr = new bool[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bool[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bool[] memory newArr)
+    {
+        newArr = new bool[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(bool[2] memory arr) internal pure returns (bool[] memory newArr) {
+        newArr = new bool[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bool[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bool[] memory newArr)
+    {
+        newArr = new bool[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(bool[3] memory arr) internal pure returns (bool[] memory newArr) {
+        newArr = new bool[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bool[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bool[] memory newArr)
+    {
+        newArr = new bool[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(bool[4] memory arr) internal pure returns (bool[] memory newArr) {
+        newArr = new bool[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bool[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bool[] memory newArr)
+    {
+        newArr = new bool[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(bool[5] memory arr) internal pure returns (bool[] memory newArr) {
+        newArr = new bool[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bool[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bool[] memory newArr)
+    {
+        newArr = new bool[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(bool[6] memory arr) internal pure returns (bool[] memory newArr) {
+        newArr = new bool[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bool[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bool[] memory newArr)
+    {
+        newArr = new bool[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(bool[7] memory arr) internal pure returns (bool[] memory newArr) {
+        newArr = new bool[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bool[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bool[] memory newArr)
+    {
+        newArr = new bool[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
         }
     }
 
@@ -6040,6 +9631,195 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function fromFixed(bytes[1] memory arr) internal pure returns (bytes[] memory newArr) {
+        newArr = new bytes[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes[] memory newArr)
+    {
+        newArr = new bytes[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(bytes[2] memory arr) internal pure returns (bytes[] memory newArr) {
+        newArr = new bytes[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes[] memory newArr)
+    {
+        newArr = new bytes[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(bytes[3] memory arr) internal pure returns (bytes[] memory newArr) {
+        newArr = new bytes[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes[] memory newArr)
+    {
+        newArr = new bytes[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(bytes[4] memory arr) internal pure returns (bytes[] memory newArr) {
+        newArr = new bytes[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes[] memory newArr)
+    {
+        newArr = new bytes[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(bytes[5] memory arr) internal pure returns (bytes[] memory newArr) {
+        newArr = new bytes[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes[] memory newArr)
+    {
+        newArr = new bytes[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(bytes[6] memory arr) internal pure returns (bytes[] memory newArr) {
+        newArr = new bytes[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes[] memory newArr)
+    {
+        newArr = new bytes[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(bytes[7] memory arr) internal pure returns (bytes[] memory newArr) {
+        newArr = new bytes[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(bytes[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (bytes[] memory newArr)
+    {
+        newArr = new bytes[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
         }
     }
 
@@ -6375,6 +10155,195 @@ library Solarray {
             let length := mload(arr)
             value := mload(add(arr, shl(5, length)))
             mstore(arr, sub(length, 1))
+        }
+    }
+
+    function fromFixed(string[1] memory arr) internal pure returns (string[] memory newArr) {
+        newArr = new string[](1);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(string[1] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (string[] memory newArr)
+    {
+        newArr = new string[](maxLength);
+        for (uint256 i = 0; i < 1;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 1)
+        }
+    }
+
+    function fromFixed(string[2] memory arr) internal pure returns (string[] memory newArr) {
+        newArr = new string[](2);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(string[2] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (string[] memory newArr)
+    {
+        newArr = new string[](maxLength);
+        for (uint256 i = 0; i < 2;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 2)
+        }
+    }
+
+    function fromFixed(string[3] memory arr) internal pure returns (string[] memory newArr) {
+        newArr = new string[](3);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(string[3] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (string[] memory newArr)
+    {
+        newArr = new string[](maxLength);
+        for (uint256 i = 0; i < 3;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 3)
+        }
+    }
+
+    function fromFixed(string[4] memory arr) internal pure returns (string[] memory newArr) {
+        newArr = new string[](4);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(string[4] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (string[] memory newArr)
+    {
+        newArr = new string[](maxLength);
+        for (uint256 i = 0; i < 4;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 4)
+        }
+    }
+
+    function fromFixed(string[5] memory arr) internal pure returns (string[] memory newArr) {
+        newArr = new string[](5);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(string[5] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (string[] memory newArr)
+    {
+        newArr = new string[](maxLength);
+        for (uint256 i = 0; i < 5;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 5)
+        }
+    }
+
+    function fromFixed(string[6] memory arr) internal pure returns (string[] memory newArr) {
+        newArr = new string[](6);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(string[6] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (string[] memory newArr)
+    {
+        newArr = new string[](maxLength);
+        for (uint256 i = 0; i < 6;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 6)
+        }
+    }
+
+    function fromFixed(string[7] memory arr) internal pure returns (string[] memory newArr) {
+        newArr = new string[](7);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+    }
+
+    function fromFixedWithMaxLength(string[7] memory arr, uint256 maxLength)
+        internal
+        pure
+        returns (string[] memory newArr)
+    {
+        newArr = new string[](maxLength);
+        for (uint256 i = 0; i < 7;) {
+            newArr[i] = arr[i];
+            unchecked {
+                ++i;
+            }
+        }
+        assembly {
+            mstore(newArr, 7)
         }
     }
 
