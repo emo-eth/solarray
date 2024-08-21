@@ -122,7 +122,7 @@ def get_suffix(t_name):
 def append_array_constructors(_type: str, functions: list[str], length: int):
     type_name = _type.split()[0]
     suffix = get_suffix(type_name)
-    for i in range(1, length):
+    for i in range(1, length + 1):
         arguments = ",".join([f"{_type} {chr(ord('a') + j)}" for j in range(i)])
         copying = "\n".join([f"\t\tarr[{j}] = {chr(ord('a') + j)};" for j in range(i)])
 
@@ -140,7 +140,7 @@ def append_array_constructors(_type: str, functions: list[str], length: int):
 def append_allocated_array_constructors(_type: str, functions: list[str], length: int):
     type_name = _type.split()[0]
     suffix = get_suffix(type_name)
-    for i in range(1, length):
+    for i in range(1, length + 1):
         arguments = "uint256 maxLength, " + ",".join(
             [f"{_type} {chr(ord('a') + j)}" for j in range(i)]
         )
@@ -353,7 +353,7 @@ def append_pop(_type: str, functions: list[str]):
 def append_from_fixed(_type: str, functions: list[str]):
     length = 8
     type_name = _type.split()[0]
-    for i in range(1, length):
+    for i in range(1, length + 1):
         functions.append(
             f"""
         function fromFixed({type_name}[{i}] memory arr) internal pure returns ({type_name}[] memory newArr) {{
